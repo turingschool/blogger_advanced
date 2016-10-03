@@ -11,4 +11,10 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
   root to: 'dashboard#show'
+
+  namespace :api do
+    namespace :v1 do
+      resources :articles
+    end
+  end
 end
